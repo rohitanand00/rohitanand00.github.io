@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohit Anand | Portfolio</title>
+    <title>Rohit Anand | Data Analyst Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #020617; color: #e2e8f0; font-family: sans-serif; overflow-x: hidden; }
-        .glass { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { background-color: #020617; color: #e2e8f0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .glass { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(to right, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         canvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+        .timeline-dot { position: absolute; left: -41px; top: 8px; width: 16px; height: 16px; border-radius: 50%; border: 4px solid #020617; }
     </style>
 </head>
 <body>
@@ -16,60 +18,126 @@
 <canvas id="bgCanvas"></canvas>
 
 <main class="max-w-5xl mx-auto px-6 py-12">
-    <section class="py-20">
-        <h1 class="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 mb-4">
-            Rohit Anand
-        </h1>
-        <p class="text-xl text-slate-400 max-w-2xl">
-            Business Analyst & Operations Professional. MBA graduate specialized in data-driven impact and process optimization.
+    <section class="py-16 md:py-24">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 gradient-text">Rohit Anand</h1>
+        <h2 class="text-xl md:text-2xl font-medium text-slate-300 mb-6">Data Analyst at S&P Global | MBA Business Analytics</h2>
+        <p class="text-lg text-slate-400 max-w-3xl leading-relaxed mb-8">
+            I’m a Business Analytics MBA specialized in bridging the gap between raw data and usable financial intelligence. Whether it’s building AI agents for HR metrics at Pegasystems or optimizing 50+ delivery routes at Innodatatics, I focus on data that drives immediate operational impact.
         </p>
+        <div class="flex gap-4">
+            <a href="https://www.linkedin.com/in/-rohitanand" target="_blank" class="px-6 py-2 rounded-full glass hover:bg-slate-800 transition">LinkedIn</a>
+            <a href="mailto:anandrohit919@gmail.com" class="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-500 transition">Contact Me</a>
+        </div>
     </section>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
-        <div class="glass p-6 rounded-2xl">
+        <div class="glass p-6 rounded-2xl border-t-2 border-blue-500">
             <div class="text-3xl font-bold text-blue-400">35%</div>
-            <div class="text-sm text-slate-300">Reporting Efficiency</div>
-            <div class="text-xs text-slate-500">Reduction at Paytm Ads</div>
+            <div class="text-sm text-slate-300 font-semibold">Reporting Effort Reduction</div>
+            <div class="text-xs text-slate-500">Achieved at Paytm Ads</div>
         </div>
-        <div class="glass p-6 rounded-2xl">
-            <div class="text-3xl font-bold text-emerald-400">95%</div>
-            <div class="text-sm text-slate-300">Forecast Accuracy</div>
-            <div class="text-xs text-slate-500">ARIMA/LSTM Implementation</div>
+        <div class="glass p-6 rounded-2xl border-t-2 border-emerald-500">
+            <div class="text-3xl font-bold text-emerald-400">~95%</div>
+            <div class="text-sm text-slate-300 font-semibold">Forecast Accuracy</div>
+            <div class="text-xs text-slate-500">ARIMA/LSTM at Innodatatics</div>
         </div>
-        <div class="glass p-6 rounded-2xl">
+        <div class="glass p-6 rounded-2xl border-t-2 border-purple-500">
             <div class="text-3xl font-bold text-purple-400">12.7%</div>
-            <div class="text-sm text-slate-300">Cost Optimization</div>
-            <div class="text-xs text-slate-500">Dijkstra's Route Planning</div>
+            <div class="text-sm text-slate-300 font-semibold">Cost Optimization</div>
+            <div class="text-xs text-slate-500">Dijkstra’s Route Planning</div>
         </div>
     </div>
 
     <section class="mb-24">
-        <h2 class="text-3xl font-bold mb-8">Professional Trajectory</h2>
-        <div class="space-y-8 border-l-2 border-slate-800 pl-8 ml-4">
+        <h2 class="text-3xl font-bold mb-12 gradient-text">Professional Trajectory</h2>
+        <div class="space-y-12 border-l-2 border-slate-800 pl-8 ml-4">
+            
             <div class="relative">
-                <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-blue-500"></div>
-                <h3 class="text-xl font-bold">Business Analyst</h3>
-                <p class="text-slate-400 italic">Paytm Ads | Hyderabad</p>
-                <p class="mt-2 text-slate-300">Automating reporting workflows and optimizing operational dashboards.</p>
+                <div class="timeline-dot bg-blue-500"></div>
+                <div class="flex justify-between items-start flex-wrap gap-2">
+                    <h3 class="text-xl font-bold">Data Analyst</h3>
+                    <span class="text-sm font-mono text-slate-500">Mar 2026 - Present</span>
+                </div>
+                <p class="text-blue-400 font-medium italic mb-2">S&P Global | Hyderabad</p>
+                <ul class="text-slate-400 text-sm list-disc ml-5 space-y-1">
+                    <li>Validating investor transaction datasets via SQL and Excel for institutional financial reporting.</li>
+                </ul>
             </div>
-            </div>
-    </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-            <h3 class="text-xl font-semibold mb-6">Expertise</h3>
-            <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 rounded-full glass text-sm">SQL</span>
-                <span class="px-4 py-2 rounded-full glass text-sm">Alteryx</span>
-                <span class="px-4 py-2 rounded-full glass text-sm">Python (ARIMA/LSTM)</span>
-                <span class="px-4 py-2 rounded-full glass text-sm">Jira & Scrum</span>
+            <div class="relative">
+                <div class="timeline-dot bg-slate-600"></div>
+                <div class="flex justify-between items-start flex-wrap gap-2">
+                    <h3 class="text-xl font-bold">AI Quality Evaluator</h3>
+                    <span class="text-sm font-mono text-slate-500">Aug 2025 - Feb 2026</span>
+                </div>
+                <p class="text-slate-400 font-medium italic mb-2">Soul AI | Remote</p>
+                <ul class="text-slate-400 text-sm list-disc ml-5 space-y-1">
+                    <li>Evaluated 750+ prompt-response pairs for frontier LLMs against quality and accuracy rubrics.</li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="timeline-dot bg-blue-400"></div>
+                <div class="flex justify-between items-start flex-wrap gap-2">
+                    <h3 class="text-xl font-bold">People Initiatives Intern</h3>
+                    <span class="text-sm font-mono text-slate-500">June 2025 - Aug 2025</span>
+                </div>
+                <p class="text-blue-300 font-medium italic mb-2">Pegasystems | Hyderabad</p>
+                <ul class="text-slate-400 text-sm list-disc ml-5 space-y-1">
+                    <li>Built an AI agent and standardized HR metric dictionary with 20+ global stakeholders.</li>
+                    <li>Optimized reporting by auditing 70+ Power BI dashboards for leadership.</li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="timeline-dot bg-emerald-500"></div>
+                <div class="flex justify-between items-start flex-wrap gap-2">
+                    <h3 class="text-xl font-bold">Analytics Intern</h3>
+                    <span class="text-sm font-mono text-slate-500">Jan 2025 - May 2025</span>
+                </div>
+                <p class="text-emerald-400 font-medium italic mb-2">Paytm Ads | Bengaluru</p>
+                <ul class="text-slate-400 text-sm list-disc ml-5 space-y-1">
+                    <li>Automated performance tracking for 200+ campaigns, saving 35% manual effort.</li>
+                    <li>Visualized ROAS and CPM KPIs in Power BI for 15+ managers.</li>
+                </ul>
             </div>
         </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-6">Academic Foundation</h3>
-            <div class="border-b border-slate-800 pb-4">
-                <h4 class="font-medium font-bold">MBA</h4>
-                <p class="text-sm text-slate-400 italic">Operations & Business Analytics</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+        <div class="glass p-8 rounded-3xl">
+            <h3 class="text-xl font-semibold mb-6">Technical Expertise</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-md bg-slate-800 text-xs text-blue-300 border border-slate-700">SQL</span>
+                <span class="px-3 py-1 rounded-md bg-slate-800 text-xs text-blue-300 border border-slate-700">Power BI</span>
+                <span class="px-3 py-1 rounded-md bg-slate-800 text-xs text-blue-300 border border-slate-700">Alteryx</span>
+                <span class="px-3 py-1 rounded-md bg-slate-800 text-xs text-blue-300 border border-slate-700">Python (ARIMA/LSTM)</span>
+                <span class="px-3 py-1 rounded-md bg-slate-800 text-xs text-blue-300 border border-slate-700">Advanced Excel</span>
+                <span class="px-3 py-1 rounded-md bg-slate-800 text-xs text-blue-300 border border-slate-700">Jira & Scrum</span>
+            </div>
+        </div>
+        <div class="glass p-8 rounded-3xl">
+            <h3 class="text-xl font-semibold mb-6">Certifications</h3>
+            <ul class="space-y-3 text-sm text-slate-400">
+                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Introduction to Alteryx</li>
+                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> BCG Strategy Consulting Simulation</li>
+                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Marketing Analytics in Action</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="mb-24">
+        <h3 class="text-2xl font-bold mb-8">Academic Foundation</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass p-6 rounded-2xl">
+                <h4 class="font-bold">University of Hyderabad</h4>
+                <p class="text-sm text-blue-400">MBA, Business Analytics</p>
+                <p class="text-xs text-slate-500 mt-2 font-mono">2023 - 2025</p>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <h4 class="font-bold">Banaras Hindu University</h4>
+                <p class="text-sm text-blue-400">B.Com (Hons.), Financial Market</p>
+                <p class="text-xs text-slate-500 mt-2 font-mono">2018 - 2021</p>
             </div>
         </div>
     </section>
@@ -84,13 +152,14 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         particles = [];
-        for (let i = 0; i < 80; i++) {
+        const count = window.innerWidth < 768 ? 40 : 90;
+        for (let i = 0; i < count; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 2
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                size: Math.random() * 1.5
             });
         }
     }
@@ -100,8 +169,8 @@
         ctx.fillStyle = '#020617';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.strokeStyle = "rgba(100, 116, 139, 0.15)";
-        ctx.fillStyle = "rgba(148, 163, 184, 0.3)";
+        ctx.strokeStyle = "rgba(100, 116, 139, 0.12)";
+        ctx.fillStyle = "rgba(148, 163, 184, 0.25)";
 
         particles.forEach((p, i) => {
             p.x += p.vx; p.y += p.vy;
@@ -115,8 +184,8 @@
             for (let j = i + 1; j < particles.length; j++) {
                 const p2 = particles[j];
                 const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-                if (dist < 150) {
-                    ctx.lineWidth = 1 - dist / 150;
+                if (dist < 140) {
+                    ctx.lineWidth = (1 - dist / 140) * 0.8;
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
