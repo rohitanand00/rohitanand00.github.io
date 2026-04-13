@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Anand | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #020617; color: #e2e8f0; font-family: sans-serif; overflow-x: hidden; }
+        .glass { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+    <section class="py-20">
+        <h1 class="text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 mb-4">
+            Rohit Anand
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl">
+            Business Analyst & Operations Professional. MBA graduate specialized in data-driven impact and process optimization.
+        </p>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div class="glass p-6 rounded-2xl">
+            <div class="text-3xl font-bold text-blue-400">35%</div>
+            <div class="text-sm text-slate-300">Reporting Efficiency</div>
+            <div class="text-xs text-slate-500">Reduction at Paytm Ads</div>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+            <div class="text-3xl font-bold text-emerald-400">95%</div>
+            <div class="text-sm text-slate-300">Forecast Accuracy</div>
+            <div class="text-xs text-slate-500">ARIMA/LSTM Implementation</div>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+            <div class="text-3xl font-bold text-purple-400">12.7%</div>
+            <div class="text-sm text-slate-300">Cost Optimization</div>
+            <div class="text-xs text-slate-500">Dijkstra's Route Planning</div>
+        </div>
+    </div>
+
+    <section class="mb-24">
+        <h2 class="text-3xl font-bold mb-8">Professional Trajectory</h2>
+        <div class="space-y-8 border-l-2 border-slate-800 pl-8 ml-4">
+            <div class="relative">
+                <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-blue-500"></div>
+                <h3 class="text-xl font-bold">Business Analyst</h3>
+                <p class="text-slate-400 italic">Paytm Ads | Hyderabad</p>
+                <p class="mt-2 text-slate-300">Automating reporting workflows and optimizing operational dashboards.</p>
+            </div>
+            </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+            <h3 class="text-xl font-semibold mb-6">Expertise</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 rounded-full glass text-sm">SQL</span>
+                <span class="px-4 py-2 rounded-full glass text-sm">Alteryx</span>
+                <span class="px-4 py-2 rounded-full glass text-sm">Python (ARIMA/LSTM)</span>
+                <span class="px-4 py-2 rounded-full glass text-sm">Jira & Scrum</span>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-6">Academic Foundation</h3>
+            <div class="border-b border-slate-800 pb-4">
+                <h4 class="font-medium font-bold">MBA</h4>
+                <p class="text-sm text-slate-400 italic">Operations & Business Analytics</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function init() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2
+            });
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = "rgba(100, 116, 139, 0.15)";
+        ctx.fillStyle = "rgba(148, 163, 184, 0.3)";
+
+        particles.forEach((p, i) => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                if (dist < 150) {
+                    ctx.lineWidth = 1 - dist / 150;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    init();
+    animate();
+</script>
+</body>
+</html>
